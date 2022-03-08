@@ -5,16 +5,24 @@ export function Counter(props){
 
 	const handleChange= (value) =>{
 		setCounter(counter+value)
-		console.log("Counter", counter)
 	}
 
 	return (
-		<>
-			<h2>Counter: 0</h2>
+		<div>
+			<h2>Counter: {counter}</h2>
 			<button onClick={()=> {
 				handleChange(1)
 			}}>+</button>
-		</>
+
+			<button onClick={()=> {
+				handleChange(-1)
+			}}>-</button>
+
+			<button onClick={()=> {
+				setCounter(counter*2)
+			}}>Double</button>
+
+		</div>
 		
 	)
 }
